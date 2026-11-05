@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: "Fredoka", sans-serif;
+  --font-body: "Nunito", sans-serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-border: hsl(var(--border));
+  --color-ring: hsl(var(--ring));
+}
+
+:root {
+  --background: 45 100% 96%;
+  --foreground: 260 20% 20%;
+  --card: 0 0% 100%;
+  --card-foreground: 260 20% 20%;
+  --primary: 260 100% 65%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 45 20% 90%;
+  --muted-foreground: 260 10% 50%;
+  --accent: 180 80% 45%;
+  --border: 260 20% 90%;
+  --ring: 260 100% 65%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-body text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold;
+  }
+}
+
+.bg-grid-pattern {
+  background-image: radial-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
